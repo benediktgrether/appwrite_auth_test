@@ -29,7 +29,6 @@ export default function AuthForm({
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
                             ) => setEmail(e.target.value)}
-                            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
                     <div>
@@ -40,21 +39,15 @@ export default function AuthForm({
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
                             ) => setPassword(e.target.value)}
-                            className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
-                    <div className="flex items-center justify-between">
-                        <Button
-                            type="button"
-                            onClick={() => handleLogin(email, password)}
-                            className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        >
+                    <div className="flex items-center justify-end gap-3">
+                        <Button onClick={() => handleLogin(email, password)}>
                             Login
                         </Button>
                         <Button
-                            type="button"
+                            variant="secondary"
                             onClick={() => handleRegister(email, password)}
-                            className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
                         >
                             Register
                         </Button>
