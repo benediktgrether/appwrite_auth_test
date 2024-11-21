@@ -2,11 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import { account, ID } from './appwrite';
+import { Models } from 'appwrite';
 
 export default function Home() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState(null);
+
+    const [user, setUser] = useState<Models.User<Models.Preferences> | null>(
+        null
+    );
     const [loadingUser, setLoadingUser] = useState(true);
 
     console.log(user);
@@ -45,7 +49,8 @@ export default function Home() {
     async function handleLogin() {
         try {
             await account.createEmailPasswordSession(email, password);
-            setUser(account.get());
+            const user = await account.get();
+            setUser(user);
             setEmail('');
             setPassword('');
         } catch (error) {
