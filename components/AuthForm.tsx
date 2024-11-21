@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 interface AuthFormProps {
     handleLogin: (email: string, password: string) => void;
@@ -20,38 +22,42 @@ export default function AuthForm({
                 </h1>
                 <form className="space-y-4">
                     <div>
-                        <input
+                        <Input
                             type="email"
                             placeholder="Email"
                             value={email}
-                            onChange={e => setEmail(e.target.value)}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setEmail(e.target.value)}
                             className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
                     <div>
-                        <input
+                        <Input
                             type="password"
                             placeholder="Password"
                             value={password}
-                            onChange={e => setPassword(e.target.value)}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setPassword(e.target.value)}
                             className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
                         />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button
+                        <Button
                             type="button"
                             onClick={() => handleLogin(email, password)}
                             className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         >
                             Login
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             type="button"
                             onClick={() => handleRegister(email, password)}
                             className="px-4 py-2 font-bold text-white bg-green-500 rounded hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400"
                         >
                             Register
-                        </button>
+                        </Button>
                     </div>
                 </form>
             </div>
