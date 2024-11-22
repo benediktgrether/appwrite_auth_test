@@ -8,9 +8,7 @@ import UserDashboard from '../components/UserDashboard';
 import { Models } from 'appwrite';
 
 export default function Login() {
-    const [user, setUser] = useState<Models.User<Models.Preferences> | null>(
-        null
-    );
+    const [user, setUser] = useState(null);
     const [loadingUser, setLoadingUser] = useState(true);
 
     useEffect(() => {
