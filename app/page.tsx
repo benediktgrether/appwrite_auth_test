@@ -1,6 +1,6 @@
 'use client';
 
-import Login from '@/components/Login';
+import Login from '@appwrite_auth/components/Login';
 
 export default function Home() {
     return <Login />;
