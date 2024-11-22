@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Input } from '@appwrite_auth/components/ui/input';
-import { Button } from '@appwrite_auth/components/ui/button';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
 
 interface AuthFormProps {
     handleLogin: (email: string, password: string) => void;
