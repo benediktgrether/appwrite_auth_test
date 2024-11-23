@@ -167,7 +167,7 @@ export default function Home() {
                         <Button
                             type="button"
                             onClick={handleRegister}
-                            variant={'secondary'}
+                            variant={'outline'}
                         >
                             Register
                         </Button>
